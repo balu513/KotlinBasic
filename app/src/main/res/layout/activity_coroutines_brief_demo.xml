@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.CoroutinesBriefActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="no return value, works on dispatchers thread \n(IO, Default,Manin)" />
+
+            <Button
+                android:id="@+id/btnLaunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:padding="10dp"
+                android:text="launch{}"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="returns value, works on dispatchers thread \nTasks inside block are Run in parallel" />
+
+            <Button
+                android:id="@+id/btnAsync"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:padding="10dp"
+                android:text="async{}  -await"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="returns value, works on dispatchers thread \n Tasks inside block Do not Run in parallel " />
+
+            <Button
+                android:id="@+id/btnWithContext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:padding="10dp"
+                android:text="withContext"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Activity level scope, when activity destroy task should cancel" />
+
+            <Button
+                android:id="@+id/btnCoroutineScope"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:padding="10dp"
+                android:text="CoroutineScope -activity level"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Application level scope, when activity destroy task won't cancel" />
+
+            <Button
+                android:id="@+id/btnGlobalScope"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:padding="10dp"
+                android:text="Global Scope -application level"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Exception handles inside coroutine block using try-catch (OR)\n Create a separate CoroutineExceptionHandlerand attach it to the scope function wherever we need exception handling " />
+
+            <Button
+                android:id="@+id/btnCoroutineExceptionHandler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:padding="10dp"
+                android:text="Global Scope -application level"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="With async, use coroutineScope with the top-level try-catch, when you do NOT want to continue with other tasks if any of them have failed."></TextView>
+
+            <Button
+                android:id="@+id/btnCoroutineScope_ExceptionHandling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:padding="10dp"
+                android:text="Global Scope -application level"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="With async, use supervisorScope with the individual try-catch for each task in addition to the top-level try-catch, when you want to continue with other tasks if one or some of them have failed."></TextView>
+
+            <Button
+                android:id="@+id/btnsupervisorScope_ExceptionHandling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:padding="10dp"
+                android:text="Global Scope -application level"
+                android:textAllCaps="false"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
