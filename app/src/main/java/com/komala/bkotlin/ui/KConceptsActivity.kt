@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.komala.bkotlin.R
 import com.komala.bkotlin.ui.adapter.KConceptsAdapter
 import com.komala.bkotlin.concepts.*
+import com.komala.bkotlin.hilt.HiltMainActivity
 import com.komala.bkotlin.ui.basics.KBasicsActivity
 import com.komala.bkotlin.utility.Utility.Companion.getConceptsList
 
@@ -23,6 +24,9 @@ class KConceptsActivity : AppCompatActivity(), KConceptsAdapter.OnKConceptClicke
 
     override fun onKConceptClicked(concept: String) {
         when (concept) {
+            "Hilt Dagger" ->{
+                startActivity(Intent(this,HiltMainActivity::class.java))
+            }
             "KotlinCollectionFunctions" -> {
                 KotlinCollectionFunctions().functionCalls()
             }

@@ -8,6 +8,7 @@ class Utility {
     companion object {
         fun getConceptsList(): List<String> {
             var list: ArrayList<String> = ArrayList<String>()
+            list.add("Hilt Dagger")
             list.add("KotlinCollectionFunctions")
             list.add("Generics")
             list.add("Destructuring Declarations")
